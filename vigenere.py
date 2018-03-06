@@ -11,12 +11,21 @@ def shift(inList):  #Shifts the first item in the list to the end
     
 def encrypt(ciphertext, message):
     counter = 0
-    for index, elem in enumerate(message):
-        0
-        for i in ciphertext:
+    key_len = len(ciphertext)
+    for character in ciphertext:
+        global int_cipher = [ord(character)]
+        
+    for character in message:
+        global int_message = [ord(character)]
+        if counter > key_len:
+            counter = 0
+        
+        char = message[character:character + 1]
+    return ciphertext
+
             
     
-    
+#print( [string.ascii_lowercase[i:] + string.ascii_lowercase[:i] for i in range(len(string.ascii_lowercase))])    #tableu generation
     
 #User input handling portion of the progam
 userinput = input("Welcome to the vigenere cipher program. Type 'help' for help using the program, or continue using it if you already know how. To exit, type CTRL + C\n")
