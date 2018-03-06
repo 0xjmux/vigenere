@@ -5,9 +5,7 @@ alpha = list(string.ascii_lowercase)
 #TODO
 #make the program not break when it encounters a character not in the alphabet
 #do the decrypt program
-
-
-
+#comment everything so when I go back through it I know what's going on
 
 def shift(inList):  #Shifts the first item in the list to the end
     first = inList[0]
@@ -28,7 +26,7 @@ def encrypt(cipher, message):
         print(int_message[character])
         
         val = (int_message[character] + int_cipher[character % key_len]) % 26    
-        ciphertext += alpha[val]    #currently broken
+        ciphertext += alpha[val]    
         
     return ciphertext
 
@@ -54,6 +52,7 @@ while True:
             else:
                 message = input("Please enter your message\n")  #replace this with the encrypt algorithm
                 
+                encrypt(cipherText, message)
             
             userinput = input()
             
