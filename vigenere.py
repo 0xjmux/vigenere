@@ -4,7 +4,7 @@ alpha = list(string.ascii_lowercase)
 
 #TODO
 #make the program not break when it encounters a character not in the alphabet
-
+#Crack feature???
     
 def encrypt(cipher, message):
     cipher = cipher.lower().replace(' ','') #converts all letters to lowercase in the cipher, removes all spaces
@@ -19,8 +19,7 @@ def encrypt(cipher, message):
         ciphertext += alpha[val]                    #appends each character to the final output
     return ciphertext
 
-            
-            
+                
 def decrypt(cipher, cipherText):
     cipher = cipher.lower().replace(' ','')
     cipherText = (cipherText.lower()).replace(' ','')
@@ -35,7 +34,7 @@ def decrypt(cipher, cipherText):
     return message
     
     
-##User input handling portion of the progam
+#User input handling portion of the progam
 userinput = input("Welcome to the vigenere cipher program. Type 'help' for help using the program, or continue using it if you already know how. To exit, type CTRL + C\n")
 while True:
     
@@ -51,21 +50,22 @@ while True:
             if cipherText == '':
                 print("you didn't enter a cipher")
             else:
-                message = input("Please enter your message\n")  #replace this with the encrypt algorithm
+                message = input("Please enter your message\n")  
                 
                 print(encrypt(cipherText, message))
             
             userinput = input()
             
-        elif userinput == 'decrypt':
-            cipherText = userinput[8:]
-            if cipherText == '':
+        elif userinput[:7] == 'decrypt':
+            cipher = userinput[8:]
+            if cipher == '':
                 print("you didn't enter a cipher")
-            else:
-                message = input("Please enter the encrypted ciphertext")    #replace this with the encrypt algorithm
                 
-                decrypt(cipherText, userinput)
-            userinput = input()            
+            else:
+                message = input("Please enter the encrypted ciphertext\n")    
+                
+                print(decrypt(cipher, message)) 
+            userinput = input()
             
         elif userinput == 'crack':
             userinput = input("haha you think this program actually has this feature\n")
@@ -73,6 +73,6 @@ while True:
                         
         else:
             userinput = input("You didn't enter a command I recognize. Type help to see what commands are availible\n")       
-    except:
+    except:         #my brilliant error handling system
         print("fuck you")
         userinput = ''
