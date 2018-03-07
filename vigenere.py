@@ -7,7 +7,7 @@ alpha = list(string.ascii_lowercase)
 #Crack feature???
     
 def encrypt(cipher, message):
-    cipher = cipher.lower().replace(' ','') #converts all letters to lowercase in the cipher, removes all spaces
+    cipher = cipher.lower().replace(' ','')         #converts all letters to lowercase in the cipher, removes all spaces
     message = (message.lower()).replace(' ','')     #converts all letters to lowercase in the message, removes all spaces
     key_len = len(cipher)                           #finds the length of the key
     ciphertext = ''                                    
