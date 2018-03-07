@@ -7,16 +7,10 @@ alpha = list(string.ascii_lowercase)
 #do the decrypt program
 #comment everything so when I go back through it I know what's going on
 
-def shift(inList):  #Shifts the first item in the list to the end
-    first = inList[0]
-    inList.pop(0)
-    inList.append(first)
-    return inList
     
 def encrypt(cipher, message):
     cipher = cipher.lower()
     message = message.lower()
-    counter = 0
     key_len = len(cipher)
     ciphertext = ''
     int_message = [alpha.index(i) for i in message]
@@ -31,6 +25,21 @@ def encrypt(cipher, message):
     return ciphertext
 
             
+            
+def decrypt(cipher, cipherText):
+    cipher = cipher.lower()
+    message = message.lower()
+    key_len = len(cipher)
+    message = ''
+    int_cipher = [alpha.index(i) for i in cipher]
+    int_cipherText = [alpha.index(i) for i in cipherText]
+    
+    for character in range(len(int_cipherText)):
+        val = 
+    
+    
+    
+    
 #print(encrypt('key', 'hello'))    # Test command for testing the execution of the encrypt and decrypt functions
 #print( [string.ascii_lowercase[i:] + string.ascii_lowercase[:i] for i in range(len(string.ascii_lowercase))])    #tableu generation
     
@@ -52,7 +61,7 @@ while True:
             else:
                 message = input("Please enter your message\n")  #replace this with the encrypt algorithm
                 
-                encrypt(cipherText, message)
+                print(encrypt(cipherText, message))
             
             userinput = input()
             
